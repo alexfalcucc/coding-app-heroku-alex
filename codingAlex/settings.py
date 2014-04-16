@@ -33,6 +33,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
+
 ALLOWED_HOSTS = []
 
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'signups',
+    'core',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -107,14 +109,14 @@ STATIC_URL = '/static/'
 
 # Local do Template
 TEMPLATE_DIRS = (
-        os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
+        os.path.join(os.path.dirname(BASE_DIR), "src", "core", "templates",),
         #'/projetosPython/coding/static/templates',
     )
 
 if DEBUG:
     MEDIA_URL = '/media/'
-    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static-only")
-    MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "media")
+    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "src", "core", "static-only")
+    MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "","core", "media")
     STATICFILES_DIRS = (
-            os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
+            os.path.join(os.path.dirname(BASE_DIR), "src", "core", "static"),
     )
